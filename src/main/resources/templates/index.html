@@ -1,1 +1,150 @@
-eddr
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Styled Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #1e1f26;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #ff4d4f;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover {
+      color: #ff4d4f;
+    }
+
+    nav a.active {
+      color: #ff4d4f;
+    }
+
+    /* Main content */
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #1e1f26;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #555;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    /* Buttons */
+    .hero a.btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 2rem;
+      background: #ff4d4f;
+      color: #fff;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .hero a.btn:hover {
+      background: #e63946;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #1e1f26;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a th:href="@{/students}"  class="active">Student</a>
+    <a th:href="@{/admins}">Admin</a>
+    <a th:href="@{/owners}">Owner</a>
+    <a th:href="@{/reports}">Report</a>
+  </nav>
+
+  <!-- Main Hero Section -->
+  <section class="hero">
+    <h1>Welcome to Our Website</h1>
+    <p>Explore our services, learn more about us, and feel free to get in touch. We provide the best solutions tailored to your needs with modern design and reliable service.</p>
+    <a href="service.html" class="btn">Explore Services</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2026 Modern Website. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
